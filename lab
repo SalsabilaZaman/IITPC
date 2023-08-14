@@ -1,0 +1,13 @@
+# sudo tcpdump
+# man tcpdump
+# sudo tcpdump -i enp2s0 -n -vvv
+# sudo tcpdump -i enp2s0 -n -vvv icmp 
+# sudo tcpdump -i enp2s0 -n -vvv -w test.pcap
+# which wireshark
+# file arp.pcap
+
+# hexdump arp.pcap
+# hd arp.pcap
+# hexdump -C arp.pcap
+# ./HexDump03 < arp.pcap
+ 
