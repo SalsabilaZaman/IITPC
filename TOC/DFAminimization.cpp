@@ -124,8 +124,26 @@ int main(){
 	   for(int j=0;j<=i;j++)
 	     cout << table[i][j] << " ";
 	   cout <<endl;
-	}     	   
-	   
-	   
-	      
+	}   
+	bool equivalent[n];
+	for(int i=0;i<n;i++)
+	   equivalent[i]=false;
+	  	   
+	for(int i=0;i<n;i++)   
+	   for(int j=0;j<i;j++)
+	      if(table[i][j]=='E')
+	         equivalent[i]=true;
+	cout <<"	   ";         
+	for(int i=0;i<c;i++)
+		cout << digits[i]<<"	";
+	cout <<endl;
+	
+	for(int i=0;i<n;i++){   
+	  if(!equivalent[i]){
+	   	cout << "State-"<<arr[i] <<"  ";
+	   	for(int j=0;j<c;j++)
+	   	    cout <<arr[transition[i][j]]<<"    ";
+	   	cout << endl;
+	   }	      
+	}	      
 }	
