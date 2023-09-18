@@ -1,0 +1,38 @@
+BASIC
+
+1.HTTP Version 1.1
+2.
+3.My IP Address-10.34.0.111	
+  gaia.cs.umass.edu server-128.119.245.12
+4.200
+5.Last-Modified: Mon, 18 Sep 2023 05:59:02 GMT\r\n
+6.128
+7.
+
+CONDITIONAL
+
+8. NO, idont see
+9. YES it  explicitly returned the contents of the file cause there is "OK" and status code with it
+10.YES,I do see.
+  information followed by the "IF-MODIFIED-SINCE:" header-
+  If-Modified-Since: Mon, 18 Sep 2023 05:59:02 GMT\r\n
+  If-None-Match: "173-6059bd6cfd7a0"\r\n
+11.  No it didnt explicitly return the contents of the file	
+
+12. TWO, 25
+13.37
+14.Status Code: 200
+   Response Phrase: OK
+15.4 TCP segments were needed.
+
+EMBEDDED OBJECTS
+
+16.4,Host: gaia.cs.umass.edu\r\n Destination IP Address: 128.119.245.12
+17.My browser downloaded the two images serially because after we requested the first get for the first image we got the ok and then we requested another get for the second image
+
+
+18.Status Code: 401
+   Response Phrase: Unauthorized
+19.Authorization : which includes username and password
+   
+   
