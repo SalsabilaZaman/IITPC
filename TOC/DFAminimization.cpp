@@ -3,34 +3,32 @@
 using namespace std;
 int n,c;
 
-
-
 int main(){
 	int s,a;
-	printf("ENTER YOUR DFA!\n");
-	printf("Total number of states-");
+	cout <<"ENTER YOUR DFA!\n";
+	cout <<"Total number of states-";
 	scanf("%d",&n);
-	char arr[n][5];
+	string arr[n];
 	for(int i=0;i<n;i++){
-		printf("Enter State%d-",i+1);
-		scanf("%s",arr[i]);
+		cout<< "Enter State"<<i+1<<"-";
+		cin >>arr[i];
 	}
-	printf("Number of characters in your language-");
-	scanf("%d",&c);
+	cout <<"Number of characters in your language-";
+	cin >> c;
 	int digits[c];	
-	printf("Enter characters-");
+	cout << "Enter characters-";
 	for(int i=0;i<c;i++)
-		scanf("%d",&digits[i]);
+		cin >> digits[i];
 	int transition[n][c];
-	char input[5];
-	printf("Enter transition stages-\n");
+	string input;
+	cout << "Enter transition stages-\n";
 	for(int i=0;i<n;i++){
-		printf("Present State-%s\n",arr[i]);
+		cout << "Present State-"<<arr[i]<<endl;
 		for(int j=0;j<c;j++){
-			printf("Next state for input %d-",digits[j]);
-			scanf("%s",input);
+			cout << "Next state for input "<< digits[j]<<"-";
+			cin >> input;
 			for(int k=0;k<n;k++){
-				if(strcmp(arr[k],input)==0){
+				if(arr[k]==input){
 				  transition[i][j]=k;
 				  break;
 				}  
@@ -38,18 +36,18 @@ int main(){
 		}
 	}
 	
-	printf("Enter starting state-");
-	scanf("%s",input);
+	cout << "Enter starting state-";
+	cin >> input;
 	for(int k=0;k<n;k++)
-	   if(strcmp(arr[k],input)==0){
+	   if(arr[k]==input){
 		  s=k;
 		  break;
 	    }
 	
-	printf("Enter accepting state-");
-	scanf("%s",input);
+	cout << "Enter accepting state-";
+	cin >> input;
 	for(int k=0;k<n;k++)
-	   if(strcmp(arr[k],input)==0){
+	   if(arr[k]==input){
 		  a=k;
 		  break;
 	    }
@@ -58,6 +56,7 @@ int main(){
 	for(int i=0;i<n;i++)
 	   accepting[i]=false;
 	accepting[a]=true;
+	
 	char table[n][n];
 	
 	for(int i=0;i<n;i++)
@@ -133,17 +132,42 @@ int main(){
 	   for(int j=0;j<i;j++)
 	      if(table[i][j]=='E')
 	         equivalent[i]=true;
-	cout <<"	   ";         
+	cout <<"	 ";         
 	for(int i=0;i<c;i++)
-		cout << digits[i]<<"	";
+		cout << digits[i]<<"    ";
 	cout <<endl;
 	
-	for(int i=0;i<n;i++){   
-	  if(!equivalent[i]){
+	for(int i=0;i<n;i++)   
+	    if(!equivalent[i]){
 	   	cout << "State-"<<arr[i] <<"  ";
-	   	for(int j=0;j<c;j++)
-	   	    cout <<arr[transition[i][j]]<<"    ";
+	   	for(int j=0;j<c;j++){
+	   	    if(equivalent[transition[i][j]]){
+	   	       for(int k=0;k<n;i++)
+	   	          if(table[transition[i][j]][k]=='E' && transition[i][j]!=k){
+	   	    		cout << arr[k]<<"    ";
+	   	    		break;
+	   	    	  }
+	   	    } 	  	
+	   	    else
+	   	    	 cout <<arr[transition[i][j]]<<"    ";      
+	   	}
 	   	cout << endl;
-	   }	      
-	}	      
+	    }	      
+		      
 }	
+/* Output looks like this-
+A B C D E F G H 
+A E 
+B X E 
+C X X E 
+D X X X E 
+E X X E X E 
+F X E X X X E 
+G E X X X X X E 
+H X X X X X X X E 
+	 0    1    
+State-A  B    A    
+State-B  A    C    
+State-C  D    B    
+State-D  D    A    
+State-H  A    D */
