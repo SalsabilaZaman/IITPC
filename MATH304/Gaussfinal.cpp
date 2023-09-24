@@ -27,9 +27,11 @@ int main(){
 			   	double swap=A[j][i];
 			   	A[j][i]=A[i][i];
 			   	A[i][i]=swap;
+			   	break;
 			   }	
 		
 		}
+		pivot=A[i][i];
 		for(int j=i+1;j<ROW;j++){
 			if(A[j][i]!=0){
 				double div=A[j][i]/pivot;
@@ -65,9 +67,11 @@ int main(){
 			   	double swap=A[j][i];
 			   	A[j][i]=A[i][i];
 			   	A[i][i]=swap;
+			   	break;
 			   }	
 		
 		}
+		pivot=A[i][i];
 		for(int j=i-1;j>=0;j--){
 			if(A[j][i]!=0){
 				double div=A[j][i]/pivot;
