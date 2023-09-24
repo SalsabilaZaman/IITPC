@@ -21,6 +21,15 @@ int main(){
 	   
 	for(int i=0;i<ROW;i++){
 		double pivot=A[i][i];
+		if(pivot ==0){
+		    for(int j=i+1;j<n;j++)
+			   if(mat_U[j][i]!=0){
+			   	double swap=mat_U[j][i];
+			   	mat_U[j][i]=mat_U[i][i];
+			   	mat_U[i][i]=swap;
+			   }	
+		
+		}
 		for(int j=i+1;j<ROW;j++){
 			if(A[j][i]!=0){
 				double div=A[j][i]/pivot;
@@ -50,6 +59,15 @@ int main(){
 	
 	for(int i=ROW-1;i>=0;i--){
 		double pivot=A[i][i];
+		if(pivot ==0){
+		    for(int j=i-1;j>=0;j--)
+			   if(mat_U[j][i]!=0){
+			   	double swap=mat_U[j][i];
+			   	mat_U[j][i]=mat_U[i][i];
+			   	mat_U[i][i]=swap;
+			   }	
+		
+		}
 		for(int j=i-1;j>=0;j--){
 			if(A[j][i]!=0){
 				double div=A[j][i]/pivot;
