@@ -23,10 +23,10 @@ int main(){
 		double pivot=A[i][i];
 		if(pivot ==0){
 		    for(int j=i+1;j<n;j++)
-			   if(mat_U[j][i]!=0){
-			   	double swap=mat_U[j][i];
-			   	mat_U[j][i]=mat_U[i][i];
-			   	mat_U[i][i]=swap;
+			   if(A[j][i]!=0){
+			   	double swap=A[j][i];
+			   	A[j][i]=A[i][i];
+			   	A[i][i]=swap;
 			   }	
 		
 		}
@@ -61,10 +61,10 @@ int main(){
 		double pivot=A[i][i];
 		if(pivot ==0){
 		    for(int j=i-1;j>=0;j--)
-			   if(mat_U[j][i]!=0){
-			   	double swap=mat_U[j][i];
-			   	mat_U[j][i]=mat_U[i][i];
-			   	mat_U[i][i]=swap;
+			   if(A[j][i]!=0){
+			   	double swap=A[j][i];
+			   	A[j][i]=A[i][i];
+			   	A[i][i]=swap;
 			   }	
 		
 		}
