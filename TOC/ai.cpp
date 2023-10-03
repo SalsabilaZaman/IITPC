@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 #include <string>
 
 bool isPalindrome(std::string input);
@@ -40,5 +40,247 @@ bool isPalindrome(std::string input) {
         // If none of the rules apply, it's not a valid palindrome
         return false;
     }
+}
+
+#include <iostream>
+#include <vector>
+#include <string>
+
+using namespace std;
+
+// Define the CFG production rules
+vector<string> deriveLeftmost(const string& input);
+vector<string> deriveRightmost(const string& input);
+
+int main() {
+    string input;
+    cout << "Enter a string: ";
+    cin >> input;
+
+    // Define the CFG for palindromes
+    vector<string> leftmost = deriveLeftmost(input);
+    vector<string> rightmost = deriveRightmost(input);
+
+    if (leftmost.empty()) {
+        cout << "No leftmost derivation exists for the given input.\n";
+    } else {
+        cout << "Leftmost Derivation:\n";
+        for (const string& step : leftmost) {
+            cout << step << endl;
+        }
+    }
+
+    if (rightmost.empty()) {
+        cout << "No rightmost derivation exists for the given input.\n";
+    } else {
+        cout << "Rightmost Derivation:\n";
+        for (const string& step : rightmost) {
+            cout << step << endl;
+        }
+    }
+
+    return 0;
+}
+
+vector<string> deriveLeftmost(const string& input) {
+    // Define the CFG production rules
+    vector<string> derivations;
+    string current = "S";
+
+    for (char c : input) {
+        if (current == "S") {
+            if (c == '0') {
+                derivations.push_back("S -> A1B");
+                current = "A1B";
+            } else {
+                return {}; // Invalid input
+            }
+        } else if (current == "A1B") {
+            if (c == '0') {
+                derivations.push_back("A1B -> 0A1B");
+                current = "0A1B";
+            } else {
+                return {}; // Invalid input
+            }
+        } else if (current == "0A1B") {
+            if (c == '0') {
+                derivations.push_back("0A1B -> 00A1B");
+                current = "00A1B";
+            } else if (c == '1') {
+                derivations.push_back("0A1B -> ε");
+                current = "";
+            } else {
+                return {}; // Invalid input
+            }
+        } else {
+            return {}; // Invalid input
+        }
+    }
+
+    if (current == "0A1B") {
+        derivations.push_back("0A1B -> ε");
+    } else {
+        return {}; // Invalid input
+    }
+
+    return derivations;
+}
+
+vector<string> deriveRightmost(const string& input) {
+    // Define the CFG production rules
+    vector<string> derivations;
+    string current = "S";
+
+    for (char c : input) {
+        if (current == "S") {
+            if (c == '0') {
+                derivations.push_back("S -> A1B");
+                current = "A1B";
+            } else {
+                return {}; // Invalid input
+            }
+        } else if (current == "A1B") {
+            if (c == '0') {
+                derivations.push_back("A1B -> A10B");
+                current = "A10B";
+            } else {
+                return {}; // Invalid input
+            }
+        } else if (current == "A10B") {
+            if (c == '0') {
+                derivations.push_back("A10B -> A100B");
+                current = "A100B";
+            } else if (c == '1') {
+                derivations.push_back("A10B -> A1B");
+                current = "A1B";
+            } else {
+                return {}; // Invalid input
+            }
+        } else {
+            return {}; // Invalid input
+        }
+    }
+
+    if (current == "A10B") {
+        derivations.push_back("A10B -> ε");
+    } else {
+        return {}; // Invalid input
+    }
+
+    return derivations;
+}
+*/
+#include <iostream>
+#include <vector>
+#include <string>
+
+using namespace std;
+
+// Define the CFG production rules
+vector<string> deriveLeftmost(const string& input);
+vector<string> deriveRightmost(const string& input);
+
+int main() {
+    string input;
+    cout << "Enter a string: ";
+    cin >> input;
+
+    // Define the CFG for palindromes
+    vector<string> leftmost = deriveLeftmost(input);
+    vector<string> rightmost = deriveRightmost(input);
+
+    if (leftmost.empty()) {
+        cout << "No leftmost derivation exists for the given input.\n";
+    } else {
+        cout << "Leftmost Derivation:\n";
+        for (const string& step : leftmost) {
+            cout << step << endl;
+        }
+    }
+
+    if (rightmost.empty()) {
+        cout << "No rightmost derivation exists for the given input.\n";
+    } else {
+        cout << "Rightmost Derivation:\n";
+        for (const string& step : rightmost) {
+            cout << step << endl;
+        }
+    }
+
+    return 0;
+}
+
+vector<string> deriveLeftmost(const string& input) {
+    // Define the CFG production rules
+    vector<string> derivations;
+    string current = "S";
+
+    for (char c : input) {
+        if (current == "S") {
+            if (c == '0') {
+                derivations.push_back("S -> 0A1B");
+                current = "0A1B";
+            } else {
+                return {}; // Invalid input
+            }
+        } else if (current == "0A1B") {
+            if (c == '0') {
+                derivations.push_back("0A1B -> 0A0B1B");
+                current = "0A0B1B";
+            } else if (c == '1') {
+                derivations.push_back("0A1B -> ε");
+                current = "";
+            } else {
+                return {}; // Invalid input
+            }
+        } else {
+            return {}; // Invalid input
+        }
+    }
+
+    if (current == "0A1B") {
+        derivations.push_back("0A1B -> ε");
+    } else {
+        return {}; // Invalid input
+    }
+
+    return derivations;
+}
+
+vector<string> deriveRightmost(const string& input) {
+    // Define the CFG production rules
+    vector<string> derivations;
+    string current = "S";
+
+    for (char c : input) {
+        if (current == "S") {
+            if (c == '0') {
+                derivations.push_back("S -> 0A1B");
+                current = "0A1B";
+            } else {
+                return {}; // Invalid input
+            }
+        } else if (current == "0A1B") {
+            if (c == '0') {
+                derivations.push_back("0A1B -> 0A0B1B");
+                current = "0A0B1B";
+            } else if (c == '1') {
+                derivations.push_back("0A1B -> ε");
+                current = "";
+            } else {
+                return {}; // Invalid input
+            }
+        } else {
+            return {}; // Invalid input
+        }
+    }
+
+    if (current == "0A1B") {
+        derivations.push_back("0A1B -> ε");
+    } else {
+        return {}; // Invalid input
+    }
+
+    return derivations;
 }
 
