@@ -29,7 +29,6 @@ bool checkCFG(string input){
 	else{	
 		if (input[0] == '0') {
             		if (input[input.size() - 1] == '0') {
-            		 	
             			cout <<"P=";
             			if(input.substr(1, input.size()- 2)=="")
             			   cout <<"E"<<endl;
@@ -38,7 +37,6 @@ bool checkCFG(string input){
                		 return checkCFG(input.substr(1, input.size()- 2));
             		}
         	}
-
         	if (input[0] == '1') {
             		if (input[input.size() - 1] == '1') {
             			cout <<"P=";
@@ -60,13 +58,12 @@ int main(){
 	inputCFG();
 	cout << "Enter String=";
 	getline(cin,INPUT);
-	len=input.size();
+	len=INPUT.size();
 	
 	
 	accepted=checkCFG(INPUT);
 							     
-	
-	
+
 	if(accepted)
 	   cout << "VALID";
 	else
