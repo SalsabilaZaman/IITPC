@@ -1,0 +1,9 @@
+                                                    //POINTER//
+
+
+int x;                     ____________________
+x=10;                      |________10________|
+
+                Address:       0x7ffee350ca28
+
+int Pointer points to the address of another int variable.

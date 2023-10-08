@@ -1,0 +1,10 @@
+Raju 10000
+Maju 12000
+Saju 12000
+Rafi 14000
+Kafi 13000
+Shafi 15000
+Nafi 12000
+Omar 15000
+Jafr 14000
+Kabir 13000

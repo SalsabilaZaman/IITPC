@@ -1,0 +1,30 @@
+Allocating memory in runtime 
+
+#include<stdlib.h>
+
+malloc() | Memory   Allocation dynamically allocates a single large block of memory with specified size     
+           ptr = (cast-type*) malloc(byte-size) 
+
+calloc() | Contiguous Allocation dynamically allocates a single large block of memory with specified size
+           ptr = (cast-type*) calloc(n,element-size) ; n = byte-size
+
+free()    --> free up spaces
+: dynamically de-allocate the memory
+
+realloc() --> dynamic allocation 
+: changes the memory allocation of a previously allocated memory
+ptr = realloc(ptr,newSize);
+
+
+                                        DIFFERENCES BETWEEN malloc() and calloc()
+
+INITIALIZATION
+malloc() allocates memory block of given size (in bytes) and returns a pointer to the beginning of the block. malloc()
+doesn't initialize the allocated memory. If we try to access the content of memory block (before initializing) then 
+we'll get segmentation fault error (or maybe a garbage value)
+
+calloc() on the other hand, allocates the memory and also initializes the allocated memory block to zero. If we try to access
+the content to these blocks then we'll get zero.
+
+NUMBER OF ARGUMENTS
+unlike malloc(), calloc() takes two arguments - number of blocks and size of each block. 

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Carbon Footprint Calculator</title>
+  <link rel="stylesheet" href="style.css">
+  <style>form {
+    animation-name: fade-in;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+  }
+  
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }</style>
+</head>
+<body>
+  <h1>Carbon Footprint Calculator</h1>
+
+  <form>
+    <label for="transportation">Weekly Miles Driven:</label>
+    <input type="number" id="transportation" name="transportation"><br><br>
+
+    <label for="diet">Weekly Meat Consumption (in pounds):</label>
+    <input type="number" id="diet" name="diet"><br><br>
+
+    <label for="electricity">Monthly Electricity Consumption (in kilowatt-hours):</label>
+    <input type="number" id="electricity" name="electricity"><br><br>
+
+    <label for="natural-gas">Monthly Natural Gas Consumption (in therms):</label>
+    <input type="number" id="natural-gas" name="natural-gas"><br><br>
+
+    <input type="button" value="Calculate" onclick="calculateFootprint()"><br><br>
+
+    <div id="footprint"></div>
+  </form>
+
+  <script>
+    function calculateFootprint() {
+      // Add JavaScript code here (see previous answer for example)
+      // Get inputs from user
+var transportation = document.getElementById("transportation").value; // in miles per week
+var diet = document.getElementById("diet").value; // in pounds of meat per week
+var electricity = document.getElementById("electricity").value; // in kilowatt-hours per month
+var naturalGas = document.getElementById("natural-gas").value; // in therms per month
+
+// Set emissions factors for each input
+var transportationFactor = 0.411; // kg CO2 per mile driven
+var meatFactor = 6.61; // kg CO2 per pound of meat consumed
+var electricityFactor = 0.36; // kg CO2 per kilowatt-hour
+var naturalGasFactor = 0.0053; // kg CO2 per therm
+
+// Calculate carbon footprint for each input
+var transportationFootprint = transportation * transportationFactor;
+var dietFootprint = diet * meatFactor;
+var electricityFootprint = electricity * electricityFactor;
+var naturalGasFootprint = naturalGas * naturalGasFactor;
+
+// Add up total carbon footprint
+var totalFootprint = transportationFootprint + dietFootprint + electricityFootprint + naturalGasFootprint;
+
+// Output results to user
+document.getElementById("footprint").innerHTML = totalFootprint.toFixed(2) + " kg CO2 per week";
+
+    }
+  </script>
+</body>
+</html>

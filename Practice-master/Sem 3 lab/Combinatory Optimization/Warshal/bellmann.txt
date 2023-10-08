@@ -1,0 +1,30 @@
+s r -1
+s z 4
+r z 3
+r y 2
+r x 2
+x y -3
+y r 1
+y z 5
+END
+s
+
+
+
+
+
+
+
+
+
+Dhaka Gazipur 3
+Dhaka Tangail 8
+Gazipur Narayanganj -6
+Gazipur Cumilla 7
+Dhaka Cumilla -4
+Tangail Gazipur 4
+Narayanganj Dhaka 2
+Narayanganj Tangail -5
+Cumilla Narayanganj 6
+END
+Dhaka

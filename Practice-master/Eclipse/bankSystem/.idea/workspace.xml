@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0c455a92-af4c-4264-9649-a90713c0dc66" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../C++/cp.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../C++/cp.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C++/cp.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../../C++/cp.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Sem 3 lab/TOC/lab 03/nfa.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../Sem 3 lab/TOC/lab 03/nfa.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Sem 3 lab/TOC/lab 03/nfa.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../../Sem 3 lab/TOC/lab 03/nfa.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Sem 3 lab/TOC/lab 03/tempCodeRunnerFile.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../Sem 3 lab/TOC/lab 03/tempCodeRunnerFile.cpp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="2TrnumkJdi5FaYPu5W0ltLul7tt" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "E:/Practice/Eclipse/bankSystem",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0c455a92-af4c-4264-9649-a90713c0dc66" name="Changes" comment="" />
+      <created>1691810291220</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1691810291220</updated>
+      <workItem from="1691810292481" duration="19000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

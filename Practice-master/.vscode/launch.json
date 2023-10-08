@@ -1,0 +1,36 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "rec_permutation",
+            "request": "launch",
+            "mainClass": "rec_permutation",
+            "projectName": "JAVA"
+        },
+        {
+            "type": "java",
+            "name": "bit_manipulation",
+            "request": "launch",
+            "mainClass": "bit_manipulation",
+            "projectName": "JAVA"
+        },
+        {
+            "type": "java",
+            "name": "input",
+            "request": "launch",
+            "mainClass": "input",
+            "projectName": "Practice_62ec1595"
+        },
+        {
+            "type": "java",
+            "name": "conditional",
+            "request": "launch",
+            "mainClass": "conditional",
+            "projectName": "Practice_62ec1595"
+        }
+    ]
+}

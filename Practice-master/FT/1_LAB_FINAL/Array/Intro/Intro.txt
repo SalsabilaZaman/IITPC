@@ -1,0 +1,34 @@
+/*
+                                                ARRAY  
+
+    DataType Array_name[Array_size];
+
+    for variable []
+
+    for an array memory block looks like this [         ]
+
+    int x;       [ ]
+                  x
+
+    int x[3];  [            ]                                    
+                     x
+
+    x[3] = x[0], x[1], x[2]
+
+    float cgpa[5]; [                    ]
+                          cgpa
+
+    cgpa[5] -> cgpa[0], cgpa[1], cgpa[2], cgpa[3], cgpa[4] 
+    
+    Array is Zero indexed.
+
+    x=1; [1]
+          x
+
+    x[0]= 2; [2         ]
+            x[0] x[1] x[2] 
+
+    cgpa[4]=3; [               3]
+
+
+*/
