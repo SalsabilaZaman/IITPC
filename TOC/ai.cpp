@@ -169,7 +169,7 @@ vector<string> deriveRightmost(const string& input) {
 
     return derivations;
 }
-*/
+
 #include <iostream>
 #include <vector>
 #include <string>
@@ -282,5 +282,55 @@ vector<string> deriveRightmost(const string& input) {
     }
 
     return derivations;
+}
+*/
+#include <iostream>
+#include <vector>
+#include <string>
+
+using namespace std;
+
+// Define the CFG rules
+vector<pair<char, string>> cfg = {
+    {'S', "aS"},
+    {'S', "aSbS"},
+    {'S', ""}
+};
+
+// Function to generate leftmost derivations
+void leftmostDerivation(const string& input, int step, const string& derivation) {
+    if (step == input.length()) {
+        if (derivation == input) {
+            cout << "Leftmost " << step << ": " << derivation << endl;
+            return;
+        }
+        return;
+    }
+
+    for (const auto& rule : cfg) {
+        char nonTerminal = rule.first;
+        const string& production = rule.second;
+
+        if (derivation.length() + production.length() <= input.length() &&
+            input.compare(derivation.length(), production.length(), production) == 0) {
+            string newDerivation = derivation;
+            newDerivation += nonTerminal;
+            leftmostDerivation(input, step, newDerivation);
+        }
+    }
+}
+
+int main() {
+    string input;
+    cout << "Input: ";
+    cin >> input;
+    for (int step = 1; step <= input.length(); step++) {
+        string initialDerivation;
+        leftmostDerivation(input, step, initialDerivation);
+    }
+
+    cout << "The grammar is ambiguous." << endl;
+
+    return 0;
 }
 

@@ -31,6 +31,7 @@ bool diagonallyDominant(){
 	return true;
 
 }
+
 void jacobian(){
 	int i,j;
 	double sum;
