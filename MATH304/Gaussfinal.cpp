@@ -22,7 +22,7 @@ int main(){
 	for(int i=0;i<ROW;i++){
 		double pivot=A[i][i];
 		if(pivot ==0){
-		    for(int j=i+1;j<n;j++)
+		    for(int j=i+1;j<ROW;j++)
 			   if(A[j][i]!=0){
 			   	double swap=A[j][i];
 			   	A[j][i]=A[i][i];
