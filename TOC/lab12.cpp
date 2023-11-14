@@ -1,6 +1,4 @@
-#include<iostream>
-#include<stack>
-#include<cstring>
+#include<bits/stdc++.h>
 using namespace std;
 
 /*void pda(string input){
@@ -13,12 +11,12 @@ using namespace std;
 
 }
 */
-void PrintStack(stack<char> s){
+void PrintStack(stack<string> s){
  
     if (s.empty()) 
         return;
      
-    char x = s.top();
+    string x = s.top();
  
     s.pop();
     PrintStack(s);
@@ -30,26 +28,50 @@ void PrintStack(stack<char> s){
 }
 
 bool pda(string input){
-	stack<char> st;
+	stack<string> st;
 	int i=0;
-	if(input[0]!='0')
+	string s="";
+	//st.push("Z");
+	if(input[0]!='a')
 		return false;
-	while(input[i]!='1'){
-		st.push(input[i]);
+	
+	while(input[i]!='b'){
+		cout <<input[i]<<","<<"E"<<"->"<<input[i]<<endl;
+		st.push(s+input[i]);
 		cout <<"Stack After Push:";
 		PrintStack(st);
 		cout<<endl;
 		i++;
 	}
 	
-	while(input[i]=='1' ){
+	while(input[i]=='b' ){
+	   if(st.top()=="a"){
+	   	cout <<input[i]<<","<<st.top()<<"->"<<st.top()<<input[i]<<endl;
+		string top=st.top();
+		st.pop();
+	   	st.push(top+(s+input[i]));
+		cout <<"Stack After:";
+		PrintStack(st);
+		cout<<endl;
+		i++;
+	   }
+	       
+	    
+	    else{	
+		cout <<input[i]<<","<<st.top()<<"->"<<"E"<<endl;
 		st.pop();
 		cout <<"Stack After Pop:";
 		PrintStack(st);
 		cout <<endl;
-		i++;
+	    	i++;
+	    }	
+		//i++;
 	}
-
+	
+	//st.pop();
+	//cout <<"Stack After Pop:";
+	//	PrintStack(st);
+	//	cout <<endl;
 	if(st.empty() && i==input.size())
 		return true;
 	else

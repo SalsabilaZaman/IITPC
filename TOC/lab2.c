@@ -1,26 +1,7 @@
 #include<stdio.h>
 #include<string.h>
 int n,c;
-/*int dfa(int *arr[],int digits[], char *arr1[],int f,int l,char *input){
-	int len=strlen(input);
-	int flag=f;
-	printf("%s",arr1[f]);
-	for(int i=0;i<len;i++){
-	    for(int j=0;j<c;j++)	
-		if(input[i]==digits[j]){
-		   {
-		   	printf("%s |",arr1[arr[digits[j]][flag]]);
-		   	   flag=arr[digits[j]][flag];
-		   	   break;
-		   }  
-		 break;    
-		}
-	   
-	}   
-	    
-	return flag;
-}
-*/
+
 int main(){
 	int s,a;
 	printf("ENTER YOUR DFA!\n");
@@ -69,6 +50,8 @@ int main(){
 		  a=k;
 		  break;
 	    }
+	int t=0;
+	while(t!=10){
 	char str[20];    
 	printf("Enter you string-");    
 	scanf("%s",str);
@@ -94,5 +77,6 @@ int main(){
 	  printf("String is accepted!\n");
 	else
 	 printf("NO!\n") ; 
+	} 
 	return 0;
 }
